@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gym-planner"
+version = "0.1.0"
+description = "Automated gym planning and Google Calendar publishing."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "google-api-python-client",
+  "google-auth-httplib2",
+  "google-auth-oauthlib",
+  "ttkbootstrap",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+build = ["pyinstaller"]
+
+[project.scripts]
+gym-planner = "gym_planner.cli:main"
+gym-planner-gui = "gym_planner.app:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100

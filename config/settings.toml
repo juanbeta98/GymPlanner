@@ -1,0 +1,61 @@
+timezone = "Europe/Amsterdam"
+calendar_name = "Training"
+
+[fixed_training_types]
+Push = "Functional"
+Pull = "Functional"
+Legs = ""
+
+[[schedule]]
+weekday = 0
+label = "Push"
+start = "06:00"
+end = "07:30"
+
+[[schedule]]
+weekday = 1
+label = "Run – Quality"
+start = "06:30"
+end = "07:15"
+
+[[schedule]]
+weekday = 1
+label = "Mobility Routine"
+start = "18:30"
+end = "19:15"
+
+[[schedule]]
+weekday = 2
+label = "Pull"
+start = "06:00"
+end = "07:30"
+
+[[schedule]]
+weekday = 3
+label = "Legs"
+start = "06:00"
+end = "07:30"
+
+[[schedule]]
+weekday = 4
+label = "Calisthenics"
+start = "06:00"
+end = "07:30"
+
+[[schedule]]
+weekday = 5
+label = "Run – Aerobic"
+start = "08:00"
+end = "08:45"
+
+[[schedule]]
+weekday = 5
+label = "Swimming/Mobility"
+start = "11:00"
+end = "11:45"
+
+[[schedule]]
+weekday = 6
+label = "HYROX Madness"
+start = "08:00"
+end = "10:00"
