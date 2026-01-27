@@ -3,7 +3,7 @@ import random
 from datetime import date, timedelta
 from typing import List, Tuple
 
-from .config import SETTINGS
+from .config import get_settings
 from .paths import get_log_path
 from .workouts import workouts
 
@@ -36,8 +36,8 @@ def choose_with_no_repeat(options, last_used):
     return random.choice(choices if choices else options)
 
 
-def select_push_pull(day: str, log: LogType) -> str:
-    fixed_type = (SETTINGS.fixed_training_types.get(day) or "").strip()
+def select_push_pull(day: str, log: LogType, fixed_types: dict) -> str:
+    fixed_type = (fixed_types.get(day) or "").strip()
     if fixed_type:
         training_type = fixed_type
     else:
@@ -57,8 +57,8 @@ def select_push_pull(day: str, log: LogType) -> str:
     return f"{day} – {training_type} ({letter})"
 
 
-def select_legs(log: LogType) -> str:
-    fixed_type = (SETTINGS.fixed_training_types.get("Legs") or "").strip()
+def select_legs(log: LogType, fixed_types: dict) -> str:
+    fixed_type = (fixed_types.get("Legs") or "").strip()
     if fixed_type:
         training_type = fixed_type
     else:
@@ -88,19 +88,20 @@ def select_calisthenics(log: LogType) -> str:
 
 
 def generate_week(start_date: date) -> List[EventType]:
+    settings = get_settings()
     log = load_log()
     events: List[EventType] = []
 
-    for weekday in sorted(SETTINGS.schedule):
-        day_events = SETTINGS.schedule[weekday]
+    for weekday in sorted(settings.schedule):
+        day_events = settings.schedule[weekday]
         event_date = start_date + timedelta(days=weekday)
         for label, start, end in day_events:
             if label == "Push":
-                title = select_push_pull("Push", log)
+                title = select_push_pull("Push", log, settings.fixed_training_types)
             elif label == "Pull":
-                title = select_push_pull("Pull", log)
+                title = select_push_pull("Pull", log, settings.fixed_training_types)
             elif label == "Legs":
-                title = select_legs(log)
+                title = select_legs(log, settings.fixed_training_types)
             elif label == "Calisthenics":
                 title = select_calisthenics(log)
             else:

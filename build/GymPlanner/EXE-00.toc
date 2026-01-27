@@ -1,5 +1,5 @@
 ('/Users/jbeta/Library/CloudStorage/GoogleDrive-juan.beta98@gmail.com/My '
- 'Drive/Personal/Training/gym_planner/build/GymPlanner/GymPlanner',
+ 'Drive/Personal/Training/GymPlanner/build/GymPlanner/GymPlanner',
  False,
  False,
  True,
@@ -14,11 +14,11 @@
  None,
  None,
  '/Users/jbeta/Library/CloudStorage/GoogleDrive-juan.beta98@gmail.com/My '
- 'Drive/Personal/Training/gym_planner/build/GymPlanner/GymPlanner.pkg',
+ 'Drive/Personal/Training/GymPlanner/build/GymPlanner/GymPlanner.pkg',
  [('pyi-contents-directory _internal', '', 'OPTION'),
   ('PYZ-00.pyz',
    '/Users/jbeta/Library/CloudStorage/GoogleDrive-juan.beta98@gmail.com/My '
-   'Drive/Personal/Training/gym_planner/build/GymPlanner/PYZ-00.pyz',
+   'Drive/Personal/Training/GymPlanner/build/GymPlanner/PYZ-00.pyz',
    'PYZ'),
   ('python3.14/lib-dynload/_struct.cpython-314-darwin.so',
    '/Users/jbeta/.local/share/mamba/envs/gymplannerEnv/lib/python3.14/lib-dynload/_struct.cpython-314-darwin.so',
@@ -28,19 +28,19 @@
    'EXTENSION'),
   ('struct',
    '/Users/jbeta/Library/CloudStorage/GoogleDrive-juan.beta98@gmail.com/My '
-   'Drive/Personal/Training/gym_planner/build/GymPlanner/localpycs/struct.pyc',
+   'Drive/Personal/Training/GymPlanner/build/GymPlanner/localpycs/struct.pyc',
    'PYMODULE'),
   ('pyimod01_archive',
    '/Users/jbeta/Library/CloudStorage/GoogleDrive-juan.beta98@gmail.com/My '
-   'Drive/Personal/Training/gym_planner/build/GymPlanner/localpycs/pyimod01_archive.pyc',
+   'Drive/Personal/Training/GymPlanner/build/GymPlanner/localpycs/pyimod01_archive.pyc',
    'PYMODULE'),
   ('pyimod02_importers',
    '/Users/jbeta/Library/CloudStorage/GoogleDrive-juan.beta98@gmail.com/My '
-   'Drive/Personal/Training/gym_planner/build/GymPlanner/localpycs/pyimod02_importers.pyc',
+   'Drive/Personal/Training/GymPlanner/build/GymPlanner/localpycs/pyimod02_importers.pyc',
    'PYMODULE'),
   ('pyimod03_ctypes',
    '/Users/jbeta/Library/CloudStorage/GoogleDrive-juan.beta98@gmail.com/My '
-   'Drive/Personal/Training/gym_planner/build/GymPlanner/localpycs/pyimod03_ctypes.pyc',
+   'Drive/Personal/Training/GymPlanner/build/GymPlanner/localpycs/pyimod03_ctypes.pyc',
    'PYMODULE'),
   ('pyiboot01_bootstrap',
    '/Users/jbeta/.local/share/mamba/envs/gymplannerEnv/lib/python3.14/site-packages/PyInstaller/loader/pyiboot01_bootstrap.py',
@@ -63,14 +63,14 @@
   ('pyi_rth__tkinter',
    '/Users/jbeta/.local/share/mamba/envs/gymplannerEnv/lib/python3.14/site-packages/PyInstaller/hooks/rthooks/pyi_rth__tkinter.py',
    'PYSOURCE'),
-  ('gym_planner_app',
+  ('app_entry',
    '/Users/jbeta/Library/CloudStorage/GoogleDrive-juan.beta98@gmail.com/My '
-   'Drive/Personal/Training/gym_planner/gym_planner_app.py',
+   'Drive/Personal/Training/GymPlanner/app_entry.py',
    'PYSOURCE')],
  [],
  False,
  False,
- 1769529576,
+ 1769533943,
  [('runw',
    '/Users/jbeta/.local/share/mamba/envs/gymplannerEnv/lib/python3.14/site-packages/PyInstaller/bootloader/Darwin-64bit/runw',
    'EXECUTABLE')],

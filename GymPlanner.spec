@@ -2,10 +2,10 @@
 
 
 a = Analysis(
-    ['gym_planner_app.py'],
-    pathex=[],
+    ['app_entry.py'],
+    pathex=['src'],
     binaries=[],
-    datas=[('config.py', '.'), ('workouts.py', '.'), ('credentials.json', '.')],
+    datas=[('config/settings.toml', 'config'), ('data/credentials.json', 'data')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

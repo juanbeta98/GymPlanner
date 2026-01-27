@@ -2,9 +2,9 @@ timezone = "Europe/Amsterdam"
 calendar_name = "Training"
 
 [fixed_training_types]
-Push = "Functional"
-Pull = "Functional"
 Legs = ""
+Pull = ""
+Push = ""
 
 [[schedule]]
 weekday = 0

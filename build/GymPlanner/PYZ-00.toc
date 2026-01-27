@@ -1,5 +1,5 @@
 ('/Users/jbeta/Library/CloudStorage/GoogleDrive-juan.beta98@gmail.com/My '
- 'Drive/Personal/Training/gym_planner/build/GymPlanner/PYZ-00.pyz',
+ 'Drive/Personal/Training/GymPlanner/build/GymPlanner/PYZ-00.pyz',
  [('OpenSSL',
    '/Users/jbeta/.local/share/mamba/envs/gymplannerEnv/lib/python3.14/site-packages/OpenSSL/__init__.py',
    'PYMODULE'),
@@ -669,10 +669,6 @@
   ('concurrent.interpreters._queues',
    '/Users/jbeta/.local/share/mamba/envs/gymplannerEnv/lib/python3.14/concurrent/interpreters/_queues.py',
    'PYMODULE'),
-  ('config',
-   '/Users/jbeta/Library/CloudStorage/GoogleDrive-juan.beta98@gmail.com/My '
-   'Drive/Personal/Training/gym_planner/config.py',
-   'PYMODULE'),
   ('configparser',
    '/Users/jbeta/.local/share/mamba/envs/gymplannerEnv/lib/python3.14/configparser.py',
    'PYMODULE'),
@@ -1222,7 +1218,31 @@
    'PYMODULE'),
   ('gym_planner',
    '/Users/jbeta/Library/CloudStorage/GoogleDrive-juan.beta98@gmail.com/My '
-   'Drive/Personal/Training/gym_planner/gym_planner.py',
+   'Drive/Personal/Training/GymPlanner/src/gym_planner/__init__.py',
+   'PYMODULE'),
+  ('gym_planner.app',
+   '/Users/jbeta/Library/CloudStorage/GoogleDrive-juan.beta98@gmail.com/My '
+   'Drive/Personal/Training/GymPlanner/src/gym_planner/app.py',
+   'PYMODULE'),
+  ('gym_planner.config',
+   '/Users/jbeta/Library/CloudStorage/GoogleDrive-juan.beta98@gmail.com/My '
+   'Drive/Personal/Training/GymPlanner/src/gym_planner/config.py',
+   'PYMODULE'),
+  ('gym_planner.google_calendar',
+   '/Users/jbeta/Library/CloudStorage/GoogleDrive-juan.beta98@gmail.com/My '
+   'Drive/Personal/Training/GymPlanner/src/gym_planner/google_calendar.py',
+   'PYMODULE'),
+  ('gym_planner.paths',
+   '/Users/jbeta/Library/CloudStorage/GoogleDrive-juan.beta98@gmail.com/My '
+   'Drive/Personal/Training/GymPlanner/src/gym_planner/paths.py',
+   'PYMODULE'),
+  ('gym_planner.planner',
+   '/Users/jbeta/Library/CloudStorage/GoogleDrive-juan.beta98@gmail.com/My '
+   'Drive/Personal/Training/GymPlanner/src/gym_planner/planner.py',
+   'PYMODULE'),
+  ('gym_planner.workouts',
+   '/Users/jbeta/Library/CloudStorage/GoogleDrive-juan.beta98@gmail.com/My '
+   'Drive/Personal/Training/GymPlanner/src/gym_planner/workouts.py',
    'PYMODULE'),
   ('gzip',
    '/Users/jbeta/.local/share/mamba/envs/gymplannerEnv/lib/python3.14/gzip.py',
@@ -2976,10 +2996,6 @@
    'PYMODULE'),
   ('webbrowser',
    '/Users/jbeta/.local/share/mamba/envs/gymplannerEnv/lib/python3.14/webbrowser.py',
-   'PYMODULE'),
-  ('workouts',
-   '/Users/jbeta/Library/CloudStorage/GoogleDrive-juan.beta98@gmail.com/My '
-   'Drive/Personal/Training/gym_planner/workouts.py',
    'PYMODULE'),
   ('wsgiref',
    '/Users/jbeta/.local/share/mamba/envs/gymplannerEnv/lib/python3.14/wsgiref/__init__.py',

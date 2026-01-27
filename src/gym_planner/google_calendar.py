@@ -6,7 +6,7 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 
-from .config import SETTINGS
+from .config import get_settings
 from .paths import get_credentials_path, get_token_path
 
 SCOPES = ["https://www.googleapis.com/auth/calendar"]
@@ -51,8 +51,9 @@ def get_training_calendar_id(service, calendar_name: str):
 
 
 def upload_events_to_google(events, calendar_name: str | None = None):
+    settings = get_settings()
     service = get_service()
-    calendar_id = get_training_calendar_id(service, calendar_name or SETTINGS.calendar_name)
+    calendar_id = get_training_calendar_id(service, calendar_name or settings.calendar_name)
 
     for date, title, start, end in events:
         start_dt = datetime.combine(date, datetime.strptime(start, "%H:%M").time())
@@ -60,8 +61,8 @@ def upload_events_to_google(events, calendar_name: str | None = None):
 
         event_body = {
             "summary": title,
-            "start": {"dateTime": start_dt.isoformat(), "timeZone": SETTINGS.timezone},
-            "end": {"dateTime": end_dt.isoformat(), "timeZone": SETTINGS.timezone},
+            "start": {"dateTime": start_dt.isoformat(), "timeZone": settings.timezone},
+            "end": {"dateTime": end_dt.isoformat(), "timeZone": settings.timezone},
         }
 
         service.events().insert(calendarId=calendar_id, body=event_body).execute()

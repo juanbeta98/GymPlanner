@@ -8,11 +8,31 @@ from ttkbootstrap.widgets import DateEntry
 
 from .planner import generate_week
 from .google_calendar import upload_events_to_google
+from .config import get_settings, update_fixed_training_types
+from .workouts import workouts
+
+ALTERNATING_LABEL = "Alternating"
 
 
-def run_plan(date_picker, date_entry, status_var, root):
+def _default_selection(_value: str | None) -> str:
+    return ALTERNATING_LABEL
+
+
+def _normalize_selection(value: str) -> str | None:
+    return None if value == ALTERNATING_LABEL else value
+
+
+def run_plan(date_picker, date_entry, status_var, root, push_var, pull_var, legs_var):
     manual_value = date_entry.get().strip()
     try:
+        update_fixed_training_types(
+            {
+                "Push": _normalize_selection(push_var.get()),
+                "Pull": _normalize_selection(pull_var.get()),
+                "Legs": _normalize_selection(legs_var.get()),
+            }
+        )
+
         if manual_value:
             start_date = datetime.strptime(manual_value, "%Y-%m-%d").date()
         else:
@@ -32,10 +52,12 @@ def run_plan(date_picker, date_entry, status_var, root):
 
 
 def build_ui():
+    settings = get_settings()
+
     root = ttk.Window(themename="flatly")
     root.title("Gym Planner")
-    root.geometry("520x360")
-    root.minsize(480, 320)
+    root.geometry("520x620")
+    root.minsize(480, 520)
 
     container = ttk.Frame(root, padding=24)
     container.pack(fill=tk.BOTH, expand=True)
@@ -67,6 +89,32 @@ def build_ui():
     date_entry = ttk.Entry(date_inner, width=18)
     date_entry.grid(row=1, column=1, sticky="w", padx=(24, 0), pady=(6, 0))
 
+    types_frame = ttk.LabelFrame(container, text="Fixed Training Types")
+    types_frame.pack(fill=tk.X, pady=(0, 16))
+
+    types_inner = ttk.Frame(types_frame, padding=16)
+    types_inner.pack(fill=tk.X)
+
+    push_options = [ALTERNATING_LABEL] + list(workouts["Push"].keys())
+    pull_options = [ALTERNATING_LABEL] + list(workouts["Pull"].keys())
+    legs_options = [ALTERNATING_LABEL] + list(workouts["Legs"].keys())
+
+    push_var = tk.StringVar(value=_default_selection(settings.fixed_training_types.get("Push")))
+    pull_var = tk.StringVar(value=_default_selection(settings.fixed_training_types.get("Pull")))
+    legs_var = tk.StringVar(value=_default_selection(settings.fixed_training_types.get("Legs")))
+
+    ttk.Label(types_inner, text="Push", font=("Avenir Next", 11)).grid(row=0, column=0, sticky="w")
+    push_combo = ttk.Combobox(types_inner, values=push_options, textvariable=push_var, state="readonly", width=24)
+    push_combo.grid(row=1, column=0, sticky="w", pady=(6, 12))
+
+    ttk.Label(types_inner, text="Pull", font=("Avenir Next", 11)).grid(row=2, column=0, sticky="w")
+    pull_combo = ttk.Combobox(types_inner, values=pull_options, textvariable=pull_var, state="readonly", width=24)
+    pull_combo.grid(row=3, column=0, sticky="w", pady=(6, 12))
+
+    ttk.Label(types_inner, text="Legs", font=("Avenir Next", 11)).grid(row=4, column=0, sticky="w")
+    legs_combo = ttk.Combobox(types_inner, values=legs_options, textvariable=legs_var, state="readonly", width=24)
+    legs_combo.grid(row=5, column=0, sticky="w", pady=(6, 0))
+
     status_var = tk.StringVar(value="Ready")
     status = ttk.Label(container, textvariable=status_var, font=("Avenir Next", 11))
     status.pack(anchor="w", pady=(0, 12))
@@ -75,7 +123,7 @@ def build_ui():
         container,
         text="Generate & Upload",
         bootstyle=PRIMARY,
-        command=lambda: run_plan(date_picker, date_entry, status_var, root),
+        command=lambda: run_plan(date_picker, date_entry, status_var, root, push_var, pull_var, legs_var),
     )
     action.pack(anchor="w")
 
