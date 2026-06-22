@@ -2,9 +2,9 @@ timezone = "Europe/Amsterdam"
 calendar_name = "Training"
 
 [fixed_training_types]
-Legs = ""
-Pull = ""
-Push = ""
+Legs = "Therapy/Mobility"
+Pull = "Functional"
+Push = "Functional"
 
 [[schedule]]
 weekday = 0
@@ -14,21 +14,27 @@ end = "07:30"
 
 [[schedule]]
 weekday = 1
-label = "Run – Quality"
-start = "06:30"
-end = "07:15"
-
-[[schedule]]
-weekday = 1
-label = "Mobility Routine"
-start = "18:30"
-end = "19:15"
-
-[[schedule]]
-weekday = 2
 label = "Pull"
 start = "06:00"
 end = "07:30"
+
+[[schedule]]
+weekday = 1
+label = "Run – Quality"
+start = "18:00"
+end = "19:00"
+
+[[schedule]]
+weekday = 2
+label = "Zone 2 Cardio"
+start = "18:00"
+end = "19:00"
+
+[[schedule]]
+weekday = 2
+label = "HYROX Conditioning"
+start = "19:00"
+end = "20:00"
 
 [[schedule]]
 weekday = 3
@@ -38,24 +44,24 @@ end = "07:30"
 
 [[schedule]]
 weekday = 4
-label = "Calisthenics"
+label = "Easy Run"
 start = "06:00"
-end = "07:30"
+end = "06:45"
+
+[[schedule]]
+weekday = 4
+label = "Calisthenics"
+start = "06:45"
+end = "07:45"
 
 [[schedule]]
 weekday = 5
-label = "Run – Aerobic"
-start = "08:00"
-end = "08:45"
-
-[[schedule]]
-weekday = 5
-label = "Swimming/Mobility"
-start = "11:00"
-end = "11:45"
+label = "HYROX Madness"
+start = "10:00"
+end = "12:00"
 
 [[schedule]]
 weekday = 6
-label = "HYROX Madness"
-start = "08:00"
-end = "10:00"
+label = "Long Run"
+start = "10:00"
+end = "11:15"
