@@ -10,6 +10,15 @@ def get_project_root() -> Path:
 
     if getattr(sys, "frozen", False):
         exe_path = Path(sys.executable).resolve()
+        # When the .app bundle sits next to the project source folder (e.g.
+        # Training/GymPlanner.app alongside Training/GymPlanner/), resolve the
+        # sibling directory with the same stem as the bundle.
+        app_bundle = exe_path.parents[2]  # .../GymPlanner.app
+        sibling = app_bundle.parent / app_bundle.stem  # .../GymPlanner
+        if sibling.is_dir() and (sibling / "config" / "settings.toml").exists():
+            return sibling
+        # Legacy: app was built inside dist/ within the project root, so
+        # parents[4] pointed directly at the project root.
         try:
             return exe_path.parents[4]
         except IndexError:

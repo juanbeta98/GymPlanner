@@ -1,4 +1,10 @@
+# macOS metadata
+.DS_Store
+
+# Build artifacts
+build/
+dist/
+
 # Tokens
 data/
-dist/
 token.json
